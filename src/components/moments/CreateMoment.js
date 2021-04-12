@@ -18,9 +18,9 @@ class CreateMoment extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createMoment(this.state);
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
-  
+
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/signin' />
