@@ -9,8 +9,6 @@ import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -37,9 +35,9 @@ const { auth, profile } = props;
              <h1>{">>"}</h1>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-           <Link to='/' className="brand-logo">ApinessApp</Link>
+           	<Link to='/' className="brand-logo">ApinessApp</Link>
           </Typography>
-             {links}
+            {links}
         </Toolbar>
       </AppBar>
 	</div>

@@ -26,18 +26,15 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
-    )
-  }
+    )}
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   return {
     moment: state.firestore.ordered.moment,
     auth: state.firebase.auth,
     notifications: state.firestore.ordered.notifications
-  }
-}
+  }}
 
 export default compose(
   connect(mapStateToProps),

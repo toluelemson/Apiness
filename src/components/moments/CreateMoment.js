@@ -8,17 +8,19 @@ class CreateMoment extends Component {
     title: '',
     content: ''
   }
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
     this.props.createMoment(this.state);
-    // this.props.history.push('/');
+    this.props.history.push('/');
   }
+  
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/signin' />
@@ -28,7 +30,6 @@ class CreateMoment extends Component {
 			<div class="card-body">
 				<form class="" onSubmit={this.handleSubmit}>
 					<div class="position-relative form-group"><label for="text" class=""> Say something</label><input name="text" id="title" placeholder="Share your happiness" type="text" class="form-control" onChange={this.handleChange} /></div>
-					{/* <div class="position-relative form-group"><label for="exampleText" class="">Say something...</label><input name="text" id="content" placeholder="Share your happiness" type="text-area" class="form-control" onChange={this.handleChange}></input></div> */}
 					<button class="mt-1 btn btn-primary">Share</button>
 				</form>
 			</div>

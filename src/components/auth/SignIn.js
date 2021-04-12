@@ -24,69 +24,69 @@ class SignIn extends Component {
       [e.target.id]: e.target.value
     })
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.signIn(this.state)
   }
-  render() {
 
+  render() {
     const { authError, auth } = this.props;
     if (auth.uid) return <Redirect to='/' />
 	const { classes } = this.props;
 
     return (
-	<Container component="main" maxWidth="xs">
-
-      <CssBaseline />
-      <div className={classes.paper}>
-		   <div className="center red-text">
-              { authError ? <p>{authError}</p> : null }
-            </div>
-        <form className={classes.form} noValidate onSubmit={this.handleSubmit}>
-          <TextField
-		   className="position-relative form-group"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-			onChange={this.handleChange}
-          />
-          <TextField
-		   className="position-relative form-group"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-			onChange={this.handleChange}
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item>
-              {/* <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link> */}
-            </Grid>
-          </Grid>
-        </form>
-      </div>
+		<Container component="main" maxWidth="xs">
+			<CssBaseline />
+			<div className={classes.paper}>
+				<div className="center red-text">
+					{ authError ? <p>{authError}</p> : null }
+					</div>
+				<form className={classes.form} noValidate onSubmit={this.handleSubmit}>
+				<TextField
+				className="position-relative form-group"
+					variant="outlined"
+					margin="normal"
+					required
+					fullWidth
+					id="email"
+					label="Email Address"
+					name="email"
+					autoComplete="email"
+					autoFocus
+					onChange={this.handleChange}
+				/>
+				<TextField
+				className="position-relative form-group"
+					variant="outlined"
+					margin="normal"
+					required
+					fullWidth
+					name="password"
+					label="Password"
+					type="password"
+					id="password"
+					autoComplete="current-password"
+					onChange={this.handleChange}
+				/>
+				<Button
+					type="submit"
+					fullWidth
+					variant="contained"
+					color="primary"
+					className={classes.submit}
+				>
+					Sign In
+				</Button>
+				<Grid container>
+					<Grid item>
+					{/* <Link href="#" variant="body2">
+						{"Don't have an account? Sign Up"}
+					</Link> */}
+					</Grid>
+				</Grid>
+				</form>
+			</div>
 		</Container>
     )
   }
