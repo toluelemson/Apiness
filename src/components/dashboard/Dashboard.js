@@ -12,7 +12,7 @@ import { Redirect } from 'react-router-dom'
 class Dashboard extends Component {
   render() {
     const { moment, auth, notifications } = this.props;
-    if (!auth.uid) return <Redirect to='/home' />
+    if (!auth.uid) return <Redirect to='/apiness' />
 
     return (
       <div className="dashboard container">
