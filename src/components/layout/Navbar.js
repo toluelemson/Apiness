@@ -29,7 +29,7 @@ const { auth, profile } = props;
   const classes = useStyles();
   return(
   <div>
-      <AppBar position="static">
+      <AppBar position="static" color="inherit">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
              <h1>{">>"}</h1>
